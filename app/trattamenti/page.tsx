@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react";
 import { Sparkles, Scissors, Droplets, Eye, Heart, Hand } from "lucide-react";
 
