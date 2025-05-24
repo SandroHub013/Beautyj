@@ -84,13 +84,13 @@ export function Footer() {
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-beige-200 text-sm">
           <p>&copy; {new Date().getFullYear()} Beauty J. Tutti i diritti riservati.</p>
           <div className="mt-2 space-x-4">
-            <Link href="#" className="hover:text-white transition-colors">
+            <Link href="/privacy-policy" className="text-beige-100 hover:text-gold-500 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="#" className="hover:text-white transition-colors">
+            <Link href="/cookie-policy" className="text-beige-100 hover:text-gold-500 transition-colors">
               Cookie Policy
             </Link>
-            <Link href="#" className="hover:text-white transition-colors">
+            <Link href="/termini-e-condizioni" className="text-beige-100 hover:text-gold-500 transition-colors">
               Termini e Condizioni
             </Link>
           </div>

@@ -29,19 +29,16 @@ export default function Trattamenti() {
                   {
                     title: "Pulizia Viso Profonda",
                     description: "Trattamento di pulizia profonda per rimuovere impurità e punti neri",
-                    price: "€60",
                     image: "/placeholder.svg?height=300&width=400",
                   },
                   {
                     title: "Trattamento Anti-Age",
                     description: "Trattamento intensivo per contrastare i segni dell'invecchiamento",
-                    price: "€85",
                     image: "/placeholder.svg?height=300&width=400",
                   },
                   {
                     title: "Maschera Idratante",
                     description: "Maschera nutriente per pelli secche e disidratate",
-                    price: "€45",
                     image: "/placeholder.svg?height=300&width=400",
                   },
                 ].map((treatment, index) => (
@@ -55,10 +52,7 @@ export default function Trattamenti() {
                       />
                     </div>
                     <CardContent className="p-6">
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-lg font-semibold text-neutral-50">{treatment.title}</h3>
-                        <span className="text-gold-500 font-medium">{treatment.price}</span>
-                      </div>
+                      <h3 className="text-lg font-semibold text-neutral-50 mb-2">{treatment.title}</h3>
                       <p className="text-neutral-400">{treatment.description}</p>
                       <Button variant="link" className="p-0 mt-4 text-gold-500 hover:text-gold-400">
                         Scopri di più
@@ -75,19 +69,16 @@ export default function Trattamenti() {
                   {
                     title: "Scrub Corpo",
                     description: "Esfoliazione completa per una pelle morbida e rinnovata",
-                    price: "€70",
                     image: "/placeholder.svg?height=300&width=400",
                   },
                   {
                     title: "Trattamento Anticellulite",
                     description: "Trattamento mirato per contrastare la cellulite",
-                    price: "€90",
                     image: "/placeholder.svg?height=300&width=400",
                   },
                   {
                     title: "Fanghi Drenanti",
                     description: "Trattamento con fanghi per drenare e sgonfiare",
-                    price: "€75",
                     image: "/placeholder.svg?height=300&width=400",
                   },
                 ].map((treatment, index) => (
@@ -101,10 +92,7 @@ export default function Trattamenti() {
                       />
                     </div>
                     <CardContent className="p-6">
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-lg font-semibold text-neutral-50">{treatment.title}</h3>
-                        <span className="text-gold-500 font-medium">{treatment.price}</span>
-                      </div>
+                      <h3 className="text-lg font-semibold text-neutral-50 mb-2">{treatment.title}</h3>
                       <p className="text-neutral-400">{treatment.description}</p>
                       <Button variant="link" className="p-0 mt-4 text-gold-500 hover:text-gold-400">
                         Scopri di più
