@@ -10,9 +10,9 @@ export default function Recensioni() {
         </header>
 
         <div className="bg-neutral-900 rounded-xl shadow-lg p-6 mb-8 border border-gold-500/30">
-          <Testimonials />
-        </div>
+            <Testimonials />
+          </div>
       </div>
-    </main>
+      </main>
   )
 } 
