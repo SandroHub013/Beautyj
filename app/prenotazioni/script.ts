@@ -1,3 +1,5 @@
+// Prenotazioni disattivate: logica rimossa su richiesta.
+
 document.addEventListener('DOMContentLoaded', function() {
     // Variabili globali
     const today = new Date();

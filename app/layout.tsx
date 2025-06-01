@@ -13,8 +13,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Beauty J - Centro Estetico Professionale",
-  description:
-    "Centro estetico professionale con trattamenti personalizzati per viso, corpo, mani e piedi. Prenota il tuo trattamento online.",
+  description: "Centro estetico professionale con trattamenti personalizzati per viso, corpo, mani e piedi.",
   generator: 'v0.dev'
 }
 

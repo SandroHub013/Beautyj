@@ -42,7 +42,7 @@ export default function Contatti() {
                     <p>Lunedì: 13:00 - 20:00</p>
                     <p>Martedì - Venerdì: 9:30 - 19:00</p>
                     <p>Sabato: 9:00 - 14:00</p>
-                    <p>Domenica: Su richiesta</p>
+                    <p>Domenica: Chiuso</p>
                   </div>
                 </div>
               </div>

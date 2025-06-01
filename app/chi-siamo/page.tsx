@@ -1,6 +1,16 @@
 import Image from "next/image"
 
+const CHI_SIAMO_ON = false;
+
 export default function ChiSiamo() {
+  if (!CHI_SIAMO_ON) {
+    return (
+      <main className="min-h-screen bg-neutral-950 pt-24 flex items-center justify-center">
+        <div className="text-center text-gold-500 text-2xl font-bold">Pagina in preparazione</div>
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen bg-neutral-950 pt-24">
       <div className="container mx-auto px-4 py-8 max-w-6xl">

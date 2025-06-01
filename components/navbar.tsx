@@ -4,6 +4,8 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
+const CHI_SIAMO_ON = false;
+
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -20,11 +22,13 @@ export function Navbar() {
           />
         </Link>
         <div className="flex items-center gap-4 md:gap-6">
-          {/* Navigation links - now visible on both mobile and desktop */}
+          {/* Navigation links - ora condizionali */}
           <nav className="flex items-center gap-4 md:gap-6">
-            <Link href="/chi-siamo" className="text-sm md:text-base text-neutral-700 dark:text-neutral-200 hover:text-gold-500 dark:hover:text-gold-400 transition-colors duration-300">
-              Chi Siamo
-            </Link>
+            {CHI_SIAMO_ON && (
+              <Link href="/chi-siamo" className="text-sm md:text-base text-neutral-700 dark:text-neutral-200 hover:text-gold-500 dark:hover:text-gold-400 transition-colors duration-300">
+                Chi Siamo
+              </Link>
+            )}
             <Link href="/trattamenti" className="text-sm md:text-base text-neutral-700 dark:text-neutral-200 hover:text-gold-500 dark:hover:text-gold-400 transition-colors duration-300">
               Trattamenti
             </Link>
@@ -35,13 +39,6 @@ export function Navbar() {
               Contatti
             </Link>
           </nav>
-          
-          <Button className="bg-gradient-to-r from-gold-400 via-gold-500 to-gold-400 text-white 
-                                   hover:from-gold-500 hover:via-gold-600 hover:to-gold-500 
-                                   transition-all duration-300 shadow-lg hover:shadow-xl
-                                   border border-gold-500/30">
-            <Link href="/prenotazioni">Prenota Ora</Link>
-          </Button>
         </div>
       </div>
     </header>

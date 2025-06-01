@@ -1,53 +1,49 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Star, ChevronLeft, ChevronRight } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
-export function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+interface Review {
+  name: string;
+  text: string;
+  rating: number;
+  image?: string;
+}
 
-  const testimonials = [
-    {
-      name: "Laura Bianchi",
-      image: "/placeholder.svg?height=100&width=100",
-      rating: 5,
-      text: "Frequento Bella Estetica da più di un anno e non potrei essere più soddisfatta. Il personale è professionale e cordiale, i trattamenti sono sempre impeccabili. Consiglio vivamente il trattamento anti-age, ha fatto miracoli sulla mia pelle!",
-    },
-    {
-      name: "Marco Rossi",
-      image: "/placeholder.svg?height=100&width=100",
-      rating: 5,
-      text: "Ho regalato a mia moglie un pacchetto di trattamenti e lei è rimasta entusiasta. L'ambiente è elegante e rilassante, il personale attento e professionale. Ottimo rapporto qualità-prezzo.",
-    },
-    {
-      name: "Giulia Verdi",
-      image: "/placeholder.svg?height=100&width=100",
-      rating: 4,
-      text: "Ho provato il massaggio rilassante e devo dire che è stata un'esperienza fantastica. L'ambiente è tranquillo e l'operatrice molto professionale. Tornerò sicuramente per provare altri trattamenti.",
-    },
-    {
-      name: "Alessandra Neri",
-      image: "/placeholder.svg?height=100&width=100",
-      rating: 5,
-      text: "Frequento questo centro da diversi mesi e sono sempre soddisfatta dei risultati. I prodotti utilizzati sono di alta qualità e il personale è sempre disponibile a dare consigli personalizzati. Lo consiglio vivamente!",
-    },
-    {
-      name: "Francesca Romano",
-      image: "/placeholder.svg?height=100&width=100",
-      rating: 5,
-      text: "Ho fatto la ricostruzione unghie e sono rimasta molto soddisfatta del risultato. L'estetista è stata molto precisa e ha realizzato esattamente ciò che desideravo. Tornerò sicuramente!",
-    },
-  ]
+export function Testimonials() {
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
+  const [userReviews, setUserReviews] = useState<Review[]>([])
+  const [newReview, setNewReview] = useState<Review>({ name: '', text: '', rating: 5 })
+
+  // Carica recensioni da localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem('userReviews')
+    if (saved) setUserReviews(JSON.parse(saved))
+  }, [])
+
+  // Salva recensioni su localStorage
+  useEffect(() => {
+    localStorage.setItem('userReviews', JSON.stringify(userReviews))
+  }, [userReviews])
+
+  const testimonials: Review[] = userReviews
 
   const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 3 ? 0 : prevIndex + 1))
+    setCurrentIndex((prevIndex: number) => (prevIndex === testimonials.length - 3 ? 0 : prevIndex + 1))
   }
 
   const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 3 : prevIndex - 1))
+    setCurrentIndex((prevIndex: number) => (prevIndex === 0 ? testimonials.length - 3 : prevIndex - 1))
+  }
+
+  const handleAddReview = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (!newReview.name || !newReview.text) return
+    setUserReviews([...userReviews, newReview])
+    setNewReview({ name: '', text: '', rating: 5 })
   }
 
   return (
@@ -115,6 +111,13 @@ export function Testimonials() {
           Successivo <ChevronRight className="h-4 w-4 ml-1" />
         </Button>
       </div>
+      <form onSubmit={handleAddReview} className="mt-8 bg-neutral-100 p-4 rounded-xl">
+        <h4 className="font-semibold mb-2">Lascia una recensione</h4>
+        <input type="text" placeholder="Nome" value={newReview.name} onChange={e => setNewReview({ ...newReview, name: e.target.value })} className="mb-2 p-2 rounded w-full" required />
+        <textarea placeholder="La tua recensione" value={newReview.text} onChange={e => setNewReview({ ...newReview, text: e.target.value })} className="mb-2 p-2 rounded w-full" required />
+        <label className="block mb-2">Valutazione: <input type="number" min="1" max="5" value={newReview.rating} onChange={e => setNewReview({ ...newReview, rating: Number(e.target.value) })} className="ml-2 w-16" required /></label>
+        <button type="submit" className="bg-gold-500 text-white px-4 py-2 rounded">Invia</button>
+      </form>
     </div>
   )
 }

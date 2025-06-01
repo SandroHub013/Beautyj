@@ -12,13 +12,13 @@ export default function PrivacyPolicy() {
           <p>Beauty J - Via Antonio Gramsci 302/F, Castel Maggiore (BO) - Email: vitalejessica97@gmail.com</p>
           <h2 className="text-xl font-semibold text-gold-500">2. Dati raccolti</h2>
           <ul className="list-disc pl-6">
-            <li>Dati forniti volontariamente (es. nome, email, telefono per prenotazioni)</li>
+            <li>Dati forniti volontariamente (es. nome, email, telefono)</li>
             <li>Dati di navigazione (indirizzo IP, browser, dati tecnici)</li>
             <li>Cookie e tecnologie simili (vedi Cookie Policy)</li>
           </ul>
           <h2 className="text-xl font-semibold text-gold-500">3. Finalità del trattamento</h2>
           <ul className="list-disc pl-6">
-            <li>Gestione delle prenotazioni e dei servizi richiesti</li>
+            <li>Gestione dei servizi richiesti</li>
             <li>Risposta a richieste di informazioni</li>
             <li>Adempimenti di legge</li>
           </ul>

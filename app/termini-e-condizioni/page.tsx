@@ -10,7 +10,7 @@ export default function TerminiCondizioni() {
           <h2 className="text-xl font-semibold text-gold-500">1. Oggetto</h2>
           <p>I presenti Termini e Condizioni regolano l'uso del sito beautyj.it e dei servizi offerti.</p>
           <h2 className="text-xl font-semibold text-gold-500">2. Prenotazioni</h2>
-          <p>Le prenotazioni sono soggette a conferma. L'utente è responsabile della veridicità dei dati inseriti.</p>
+          <p>La funzione di prenotazione online non è attualmente disponibile.</p>
           <h2 className="text-xl font-semibold text-gold-500">3. Responsabilità</h2>
           <p>Beauty J non è responsabile per eventuali danni derivanti da un uso improprio del sito o da cause di forza maggiore.</p>
           <h2 className="text-xl font-semibold text-gold-500">4. Modifiche</h2>
