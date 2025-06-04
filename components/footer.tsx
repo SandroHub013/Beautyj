@@ -9,7 +9,7 @@ export function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-4">Beauty J</h3>
             <p className="text-beige-100">
-              La tua bellezza, la nostra passione. Centro estetico professionale con trattamenti personalizzati.
+              La tua bellezza, la mia passione. Centro estetico professionale con trattamenti personalizzati.
             </p>
           </div>
           <div>
@@ -58,11 +58,6 @@ export function Footer() {
               <li>
                 <Link href="/trattamenti" className="text-beige-100 hover:text-white transition-colors">
                   Depilazione
-                </Link>
-              </li>
-              <li>
-                <Link href="/trattamenti" className="text-beige-100 hover:text-white transition-colors">
-                  Massaggi
                 </Link>
               </li>
             </ul>
