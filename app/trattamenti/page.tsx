@@ -12,8 +12,8 @@ export default function Trattamenti() {
       label: "Pressoterapia",
       icon: <Heart className="w-6 h-6 text-gold-500" />,
       data: [
-        { name: "Seduta singola 35 min" },
-        { name: "Pacchetto 6 sedute + 1 omaggio 30min" },
+        { name: "Seduta singola 35 min", price: "25€" },
+        { name: "Pacchetto 6 sedute + 1 omaggio 30min", price: "150€" },
       ],
     },
     {
@@ -97,9 +97,10 @@ export default function Trattamenti() {
     },
   ];
 
-  const ServiceCard = ({ service }: { service: { name: string } }) => (
-    <div className="p-4 bg-neutral-900 rounded-lg border border-gold-500/20 hover:bg-gold-500/10 transition-all duration-300">
+  const ServiceCard = ({ service }: { service: { name: string, price?: string } }) => (
+    <div className="flex justify-between items-center p-4 bg-neutral-900 rounded-lg border border-gold-500/20 hover:bg-gold-500/10 transition-all duration-300">
       <span className="text-gold-500 font-medium">{service.name}</span>
+      {service.price && <span className="text-gold-400 font-semibold ml-4 whitespace-nowrap">{service.price}</span>}
     </div>
   );
 
